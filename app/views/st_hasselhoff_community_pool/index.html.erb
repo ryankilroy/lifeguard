@@ -1,1 +1,89 @@
-<h1>Welcome to the St. Hasselhoff Environment Pool</h1>
+<h1 class='txt-c'>Welcome to the St. Hasselhoff Environment Pool (SHEP)</h1>
+<h2>Ready</h2>
+<table class="table table-data table-light">
+  <thead>
+    <tr>
+      <th>Environment</th>
+      <th>IAAS</th>
+      <th>PCF Version</th>
+      <th>Ops Manager</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ready_envs.each do |env| %>
+      <tr>
+        <td><%= env.name %></td>
+        <td><%= env.iaas %></td>
+        <td><%= env.om_version %></td>
+        <td><%= env.ops_mgr_url %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<h2>Grounded</h2>
+<table class="table table-data table-light">
+  <thead>
+    <tr>
+      <th>Environment</th>
+      <th>Team</th>
+      <th>IAAS</th>
+      <th>PCF Version</th>
+      <th>Ops Manager</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @grounded_envs.each do |env| %>
+      <tr>
+        <td><%= env.name %></td>
+        <td><%= env.team%></td>
+        <td><%= env.iaas %></td>
+        <td><%= env.om_version %></td>
+        <td><%= env.ops_mgr_url %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<h2>Redeploying</h2>
+<table class="table table-data table-light">
+  <thead>
+    <tr>
+      <th>Environment</th>
+      <th>IAAS</th>
+      <th>PCF Version</th>
+      <th>Ops Manager</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @redeploy_envs.each do |env| %>
+      <tr>
+        <td><%= env.name %></td>
+        <td><%= env.iaas %></td>
+        <td><%= env.om_version %></td>
+        <td><%= env.ops_mgr_url %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<h2>Claimed in CI</h2>
+<table class="table table-data table-light">
+  <thead>
+    <tr>
+      <th>Environment</th>
+      <th>IAAS</th>
+      <th>PCF Version</th>
+      <th>Concourse URL</th>
+      <th>Ops Manager</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @claimed_envs.each do |env| %>
+      <tr>
+        <td><%= env.name %></td>
+        <td><%= env.iaas %></td>
+        <td><%= env.om_version %></td>
+        <td><%= env.concourse_url %></td>
+        <td><%= env.ops_mgr_url %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

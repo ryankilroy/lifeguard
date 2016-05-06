@@ -1,0 +1,2 @@
+module StHasselhoffCommunityPoolHelper
+end

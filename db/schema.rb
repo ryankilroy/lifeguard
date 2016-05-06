@@ -11,13 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160506155551) do
+ActiveRecord::Schema.define(version: 20160506160536) do
 
   create_table "environments", force: :cascade do |t|
     t.string   "name"
     t.string   "om_version"
     t.string   "image"
-    t.integer  "team_id"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.string   "iaas"
@@ -26,9 +25,10 @@ ActiveRecord::Schema.define(version: 20160506155551) do
     t.datetime "last_commit_timestamp"
     t.string   "last_commit_message"
     t.string   "state"
+    t.integer  "user_id"
   end
 
-  add_index "environments", ["team_id"], name: "index_environments_on_team_id"
+  add_index "environments", ["user_id"], name: "index_environments_on_user_id"
 
   create_table "teams", force: :cascade do |t|
     t.string   "name"

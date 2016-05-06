@@ -5,4 +5,8 @@ class StHasselhoffCommunityPoolController < ApplicationController
     @redeploy_envs = []
     @claimed_envs = []
   end
+
+  def show
+    @env = nil
+  end
 end

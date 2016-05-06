@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   get 'env/:name', to: 'st_hasselhoff_community_pool#show'
+  get 'git', to: 'st_hasselhoff_community_pool#git'
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

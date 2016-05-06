@@ -7,6 +7,6 @@ class StHasselhoffCommunityPoolController < ApplicationController
   end
 
   def show
-    @env = nil
+    @env = Environment.find_by(name: params[:name])
   end
 end

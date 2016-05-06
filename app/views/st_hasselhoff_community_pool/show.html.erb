@@ -1,0 +1,25 @@
+<h1><%= @env.name %>: <%= @env.iaas %> - <%= @env.om_version %></h1>
+<table class="table table-key-value">
+  <tbody>
+    <tr>
+      <th class="col-md-8">State</th>
+      <td class="col-md-16"><%= @env.state %></td>
+    </tr>
+    <tr>
+      <th class="col-md-8">Last Committer</th>
+      <td class="col-md-16"><%= @env.user_id %></td>
+    </tr>
+    <tr>
+      <th class="col-md-8">Last Commit Message</th>
+      <td class="col-md-16"><%= @env.last_commit_message %></td>
+    </tr>
+    <tr>
+      <th class="col-md-8">Last Commit Timestamp</th>
+      <td class="col-md-16"><%= @env.last_commit_timestamp %></td>
+    </tr>
+    <tr>
+      <th class="col-md-8">Ops Manager URL</th>
+      <td class="col-md-16"><%= @env.ops_mgr_url %></td>
+    </tr>
+  </tbody>
+</table>

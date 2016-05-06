@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/hone/ruby-git.git
+  revision: 264836fcff3c037d8d8fc44bd770b150b46fdc4e
+  branch: master
+  specs:
+    git (1.2.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -145,6 +152,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
+  git!
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.5)
@@ -157,4 +165,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.11.2
+   1.12.2

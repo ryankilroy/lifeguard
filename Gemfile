@@ -45,3 +45,4 @@ group :development do
   gem 'spring'
 end
 
+gem "git", github: "hone/ruby-git", branch: "master"

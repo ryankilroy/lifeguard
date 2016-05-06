@@ -1,4 +1,7 @@
 class StHasselhoffCommunityPoolController < ApplicationController
+  include StHasselhoffCommunityPoolHelper
+  before_action :refresh
+
   def index
     @ready_envs =  Environment.where(state: 'ready')
     @grounded_envs = Environment.where(state: 'grounded')

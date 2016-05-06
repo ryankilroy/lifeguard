@@ -5,3 +5,21 @@
 #team-page {
   display: none;
 }
+
+.indicator {
+  &.green {
+    color: #00A79D;
+  }
+
+  &.brown {
+    color: #8F4B2D;
+  }
+
+  &.blue {
+    color: #3498DB;
+  }
+
+  &.yellow {
+    color: #E6B822;
+  }
+}

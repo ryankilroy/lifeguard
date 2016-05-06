@@ -31,7 +31,9 @@
   <tbody>
     <% @grounded_envs.each do |env| %>
       <tr>
-        <td><%= env.name %></td>
+        <td>
+          <a href="/env/<%= env.name %>"><%= env.name %></a>
+        </td>
         <td><%= env.iaas %></td>
         <td><%= env.om_version %></td>
         <td><%= env.team %></td>

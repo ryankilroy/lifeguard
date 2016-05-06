@@ -1,9 +1,9 @@
 class StHasselhoffCommunityPoolController < ApplicationController
   def index
-    @ready_envs = []
-    @grounded_envs = []
-    @redeploy_envs = []
-    @claimed_envs = []
+    @ready_envs =  Environment.where(state: 'ready')
+    @grounded_envs = Environment.where(state: 'grounded')
+    @redeploy_envs = Environment.where(state: 'redeploy')
+    @claimed_envs = Environment.where(state: 'claimed')
   end
 
   def show

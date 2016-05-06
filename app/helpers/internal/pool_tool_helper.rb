@@ -1,6 +1,6 @@
 module Internal::PoolToolHelper
   def fetch
-    if File.directory?('/tmp/pool')
+    if File.directory?('/tmp/pool/environment-pool')
       g = Git.open('/tmp/pool/environment-pool', :log => Logger.new(STDOUT))
       g.pull
     else
@@ -54,9 +54,9 @@ module Internal::PoolToolHelper
     env = Environment.find_or_initialize_by(name: name)
 
     env.update_attributes(
-      state: state, 
-      ops_mgr_url: ops_mgr_url, 
-      iaas: iaas, 
+      state: state,
+      ops_mgr_url: ops_mgr_url,
+      iaas: iaas,
       user: user,
       om_version: om_version
     )
@@ -119,7 +119,7 @@ end
 #   puts g
 #   puts g.log.first
 #   p "**********:(**********"
-  
+
 #   commit = g.log(1).object('README.md').first
 
 #   p `/tmp/pool/environment-pool/pool-tool show redeploy`

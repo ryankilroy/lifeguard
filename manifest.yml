@@ -1,0 +1,7 @@
+---
+applications:
+- name: lifeguard
+  command: bundle exec rake db:migrate && bundle exec rails s -p $PORT
+  instances: 1
+  memory: 1G
+  disk_quota: 1G

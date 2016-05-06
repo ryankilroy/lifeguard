@@ -34,7 +34,7 @@ module Internal::PoolToolHelper
       elsif path.include? 'grounded'
         state = 'grounded'
       elsif (path.include? 'ready/claimed') || (path.include? 'patch/claimed')
-        state = 'ready'
+        state = 'claimed'
       else
         state = 'redeploy'
       end

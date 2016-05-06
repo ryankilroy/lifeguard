@@ -43,7 +43,7 @@ module Internal::PoolToolHelper
 
       om_version = path_components[3]
 
-      ops_mgr_url = "pcf.#{name}.cf-app.com"
+      ops_mgr_url = "https://pcf.#{name}.cf-app.com/"
 
       update_env name, state, ops_mgr_url, iaas, User.first, om_version
     end

@@ -2,7 +2,7 @@
 <div class="panel panel-simple bg-neutral-11">
   <div class="panel-body">
 <h1 class="mbxl">
-  <img alt="<%= @env.name %>" class="img-circle avatar" height="80" src="<%= @env.image || image_path('placeholder.png')%>" width="80">
+  <img alt="<%= @env.name %>" class="img-circle avatar" height="80" src="<%= @env.image || Environment::IMAGE_MAP[@env.name] || image_path('placeholder.png')%>" width="80">
   <%= @env.name %>: <%= @env.iaas %> - <%= @env.om_version %>
 </h1>
     <table class="table table-key-value mtl">
@@ -29,7 +29,9 @@
         </tr>
         <tr>
           <th class="col-md-8">Ops Manager URL</th>
-          <td class="col-md-16"><%= @env.ops_mgr_url %></td>
+          <td class="col-md-16">
+            <a href="<%= @env.ops_mgr_url %>"><%= @env.ops_mgr_url %></a>
+          </td>
         </tr>
       </tbody>
     </table>

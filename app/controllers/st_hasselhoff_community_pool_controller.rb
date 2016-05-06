@@ -4,6 +4,7 @@ class StHasselhoffCommunityPoolController < ApplicationController
     @grounded_envs = Environment.where(state: 'grounded')
     @redeploy_envs = Environment.where(state: 'redeploy')
     @claimed_envs = Environment.where(state: 'claimed')
+    @teams = Team.all
   end
 
   def show

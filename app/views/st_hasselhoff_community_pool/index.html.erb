@@ -1,4 +1,9 @@
 <h1 class='txt-c'>Welcome to the St. Hasselhoff Environment Pool (SHEP)</h1>
+<p>Organize by:</p>
+<div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-default">State</button>
+  <button type="button" class="btn btn-default selected">Team</button>
+</div>
 <h2>Ready</h2>
 <table class="table table-data table-light">
   <thead>
@@ -11,7 +16,9 @@
   <tbody>
     <% @ready_envs.each do |env| %>
       <tr>
-        <a href="/env/<%= env.name %>"><%= env.name %></a>
+        <td>
+          <a href="/env/<%= env.name %>" class="link-text"><%= env.name %></a>
+        </td>
         <td><%= env.iaas %></td>
         <td><%= env.om_version %></td>
       </tr>
@@ -32,11 +39,11 @@
     <% @grounded_envs.each do |env| %>
       <tr>
         <td>
-          <a href="/env/<%= env.name %>"><%= env.name %></a>
+          <a href="/env/<%= env.name %>" class="link-text"><%= env.name %></a>
         </td>
         <td><%= env.iaas %></td>
         <td><%= env.om_version %></td>
-        <td><%= env.team.name %></td>
+        <td><%= env.team.try(:name) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -53,7 +60,9 @@
   <tbody>
     <% @redeploy_envs.each do |env| %>
       <tr>
-        <a href="/env/<%= env.name %>"><%= env.name %></a>
+        <td>
+          <a href="/env/<%= env.name %>" class="link-text"><%= env.name %></a>
+        </td>
         <td><%= env.iaas %></td>
         <td><%= env.om_version %></td>
       </tr>
@@ -72,7 +81,9 @@
   <tbody>
     <% @claimed_envs.each do |env| %>
       <tr>
-        <a href="/env/<%= env.name %>"><%= env.name %></a>
+        <td>
+          <a href="/env/<%= env.name %>" class="link-text"><%= env.name %></a>
+        </td>
         <td><%= env.iaas %></td>
         <td><%= env.om_version %></td>
       </tr>

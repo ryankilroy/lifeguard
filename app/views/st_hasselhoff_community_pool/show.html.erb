@@ -1,5 +1,5 @@
 <h1>
-  <img src="<%= @env.image %>" height="50" ></img>
+  <img alt="..." class="img-circle avatar" height="80" src="<%= @env.image %>" width="80">
   <%= @env.name %>: <%= @env.iaas %> - <%= @env.om_version %></h1>
 
 <table class="table table-key-value">
@@ -10,7 +10,7 @@
     </tr>
     <tr>
       <th class="col-md-8">Team</th>
-      <td class="col-md-16"><%= @env.team.name %></td>
+      <td class="col-md-16"><%= @env.team.try(:name) %></td>
     </tr>
     <tr>
       <th class="col-md-8">Last Committer</th>

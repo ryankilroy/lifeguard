@@ -1,11 +1,11 @@
 module Internal::PoolToolHelper
   def fetch
-    if File.directory?('/tmp/pool/environment-pool')
-      g = Git.open('/tmp/pool/environment-pool', :log => Logger.new(STDOUT))
+    if File.directory?('/tmp/environment-pool')
+      g = Git.open('/tmp/environment-pool', :log => Logger.new(STDOUT))
       g.pull
     else
-      `mkdir /tmp/pool`
-      g = Git.clone('git@github.com:ryanmattcollins/environment-pool.git','environment-pool',:path=>'/tmp/pool')
+      `mkdir /tmp/environment-pool`
+      g = Git.clone('git@github.com:ryanmattcollins/environment-pool.git','environment-pool',:path=>'/tmp')
     end
   end
 
@@ -21,7 +21,7 @@ module Internal::PoolToolHelper
   end
 
   def get_environments
-    pool_tool =  `/tmp/pool/environment-pool/pool-tool -a -n show redeploy`
+    pool_tool =  `/tmp/environment-pool/pool-tool -a -n show redeploy`
     pool_tool_array = pool_tool.split(/\r?\n/)
 
     pool_tool_array.each do |path|

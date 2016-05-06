@@ -11,7 +11,7 @@
   <tbody>
     <% @ready_envs.each do |env| %>
       <tr>
-        <td><%= env.name %></td>
+        <a href="/env/<%= env.name %>"><%= env.name %></a>
         <td><%= env.iaas %></td>
         <td><%= env.om_version %></td>
       </tr>
@@ -36,7 +36,7 @@
         </td>
         <td><%= env.iaas %></td>
         <td><%= env.om_version %></td>
-        <td><%= env.team %></td>
+        <td><%= env.team.name %></td>
       </tr>
     <% end %>
   </tbody>
@@ -53,7 +53,7 @@
   <tbody>
     <% @redeploy_envs.each do |env| %>
       <tr>
-        <td><%= env.name %></td>
+        <a href="/env/<%= env.name %>"><%= env.name %></a>
         <td><%= env.iaas %></td>
         <td><%= env.om_version %></td>
       </tr>
@@ -72,7 +72,7 @@
   <tbody>
     <% @claimed_envs.each do |env| %>
       <tr>
-        <td><%= env.name %></td>
+        <a href="/env/<%= env.name %>"><%= env.name %></a>
         <td><%= env.iaas %></td>
         <td><%= env.om_version %></td>
       </tr>

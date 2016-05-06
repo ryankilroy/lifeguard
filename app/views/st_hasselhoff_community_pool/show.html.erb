@@ -1,4 +1,7 @@
-<h1><%= @env.name %>: <%= @env.iaas %> - <%= @env.om_version %></h1>
+<h1>
+  <img src="<%= @env.image %>" height="50" ></img>
+  <%= @env.name %>: <%= @env.iaas %> - <%= @env.om_version %></h1>
+
 <table class="table table-key-value">
   <tbody>
     <tr>
@@ -6,8 +9,12 @@
       <td class="col-md-16"><%= @env.state %></td>
     </tr>
     <tr>
+      <th class="col-md-8">Team</th>
+      <td class="col-md-16"><%= @env.team.name %></td>
+    </tr>
+    <tr>
       <th class="col-md-8">Last Committer</th>
-      <td class="col-md-16"><%= @env.user_id %></td>
+      <td class="col-md-16"><%= @env.user.username %></td>
     </tr>
     <tr>
       <th class="col-md-8">Last Commit Message</th>

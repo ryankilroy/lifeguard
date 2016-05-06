@@ -5,10 +5,17 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel='shortcut icon' href='<%= image_path("pool.ico") %>' />
 </head>
 <body>
 
-  <div class='container'>
+  <div class='pane bg-full-bleed' >
+    <div style='background: url(<%= image_path("hoff.jpg")%>); background-size:cover; padding-top: 80px; padding-bottom: 80px;'>
+      <h1 class='type-neutral-11 txt-r mrxxxl' style='text-shadow: 2px 2px #1B78B3; font-size: 52px'>Lifeguard SHEP</h1>
+    </div>
+  </div>
+
+  <div class='container pvxxl'>
     <%= yield %>
   </div>
 

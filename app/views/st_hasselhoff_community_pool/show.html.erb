@@ -1,32 +1,37 @@
-<h1>
-  <img alt="..." class="img-circle avatar" height="80" src="<%= @env.image %>" width="80">
-  <%= @env.name %>: <%= @env.iaas %> - <%= @env.om_version %></h1>
 
-<table class="table table-key-value">
-  <tbody>
-    <tr>
-      <th class="col-md-8">State</th>
-      <td class="col-md-16"><%= @env.state %></td>
-    </tr>
-    <tr>
-      <th class="col-md-8">Team</th>
-      <td class="col-md-16"><%= @env.team.try(:name) %></td>
-    </tr>
-    <tr>
-      <th class="col-md-8">Last Committer</th>
-      <td class="col-md-16"><%= @env.user.username %></td>
-    </tr>
-    <tr>
-      <th class="col-md-8">Last Commit Message</th>
-      <td class="col-md-16"><%= @env.last_commit_message %></td>
-    </tr>
-    <tr>
-      <th class="col-md-8">Last Commit Timestamp</th>
-      <td class="col-md-16"><%= @env.last_commit_timestamp %></td>
-    </tr>
-    <tr>
-      <th class="col-md-8">Ops Manager URL</th>
-      <td class="col-md-16"><%= @env.ops_mgr_url %></td>
-    </tr>
-  </tbody>
-</table>
+<div class="panel panel-simple bg-neutral-11">
+  <div class="panel-body">
+<h1 class="mbxl">
+  <img alt="<%= @env.name %>" class="img-circle avatar" height="80" src="<%= @env.image || image_path('placeholder.png')%>" width="80">
+  <%= @env.name %>: <%= @env.iaas %> - <%= @env.om_version %>
+</h1>
+    <table class="table table-key-value mtl">
+      <tbody>
+        <tr>
+          <th class="col-md-8">State</th>
+          <td class="col-md-16"><%= @env.state %></td>
+        </tr>
+        <tr>
+          <th class="col-md-8">Team</th>
+          <td class="col-md-16"><%= @env.team.try(:name) %></td>
+        </tr>
+        <tr>
+          <th class="col-md-8">Last Committer</th>
+          <td class="col-md-16"><%= @env.user.username %></td>
+        </tr>
+        <tr>
+          <th class="col-md-8">Last Commit Message</th>
+          <td class="col-md-16"><%= @env.last_commit_message %></td>
+        </tr>
+        <tr>
+          <th class="col-md-8">Last Commit Timestamp</th>
+          <td class="col-md-16"><%= @env.last_commit_timestamp %></td>
+        </tr>
+        <tr>
+          <th class="col-md-8">Ops Manager URL</th>
+          <td class="col-md-16"><%= @env.ops_mgr_url %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
